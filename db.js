@@ -34,7 +34,7 @@ function addNewPerson(name,age,city)
 {
     return new Promise(function(resolve,reject){
         connection.query(
-            `INSERT INTO persons(name,age,city) VALUES(?,?,?)`,
+            `INSERT INTO persons(name,age,city) VALUES(?,?,?)`,// sanitization from sql injection
             [name,age,city],
             function(err,result)
             {
